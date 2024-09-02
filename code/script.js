@@ -3,7 +3,13 @@
 // Step 1 - Welcome and introduction
 // Your code goes here
 alert(
-  `Welcome to our Javascript Pizzeria. Ready to Start? - Click 'OK' to begin.`
+  `Welcome to our Javascript Pizzeria! Ready to Start? - Click 'OK' to begin.`
+)
+
+let userName = prompt(`What is your name?`)
+
+alert(
+  `Hi, ${userName}! We're so happy you've joined us today!`
 )
 
 // Step 2 - Food choice
