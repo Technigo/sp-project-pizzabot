@@ -182,6 +182,28 @@ else if (foodType == "Salad") {
 
 // Step 4 - Age
 // Your code goes here
+const userAge = prompt(
+  `Will this order be for a child or adult? Please enter your age:`
+)
+
+if (userAge >= 13 && foodType == "Pizza") {
+  alert(
+    `One adult portion of ${pizzaSubtype} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+else if (userAge < 13 && foodType == "Pizza") {
+  alert(
+    `One child portion of ${pizzaSubtype} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+
+
 
 // Step 5 - Order confirmation
 // Your code goes here
