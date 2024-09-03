@@ -62,6 +62,7 @@ while (!isValid) {
 // Step 3 - Subtype choice
 // Your code goes here
 
+let foodOrder = ""
 if (foodType == "Pizza") {
   let isPizzaValid = false;
   let pizzaSubtype = prompt(
@@ -73,20 +74,23 @@ if (foodType == "Pizza") {
   )
   while (!isPizzaValid) {
     if (pizzaSubtype == 1) {
+      foodOrder = "Pepporoni Pizza"
       alert(
-        `Great choice! You have selected Pepporoni Pizza!`
+        `Great choice! You have selected ${foodOrder}!`
       )
       isPizzaValid = true;
     }
     else if (pizzaSubtype == 2) {
+      foodOrder = "Cheese Pizza"
       alert(
-        `Excellent choice! You have chosen Cheese Pizza!`
+        `Excellent choice! You have chosen ${foodOrder}!`
       )
       isPizzaValid = true;
     }
     else if (pizzaSubtype == 3) {
+      foodOrder = "Margherita Pizza"
       alert(
-        `Yum! You have chosen Margherita Pizza!`
+        `Yum! You have chosen ${foodOrder}!`
       )
       isPizzaValid = true;
     }
@@ -112,20 +116,23 @@ else if (foodType == "Pasta") {
   )
   while (!isPastaValid) {
     if (pastaSubtype == 1) {
+      foodOrder = "Spaghetti Bolognese"
       alert(
-        `That's one of our favorites! You have chosen Spaghetti Bolognese!`
+        `That's one of our favorites! You have chosen ${foodOrder}!`
       )
       isPastaValid = true;
     }
     else if (pastaSubtype == 2) {
+      foodOrder = "Fettucine Alfredo"
       alert(
-        `Wonderful choice! You have chosen Fettucine Alfredo!`
+        `Wonderful choice! You have chosen ${foodOrder}!`
       )
       isPastaValid = true;
     }
     else if (pastaSubtype == 3) {
+      foodOrder = "Lasagna"
       alert(
-        `A brilliant selection! You have chosen Lasagna!`
+        `A brilliant selection! You have chosen ${foodOrder}!`
       )
       isPastaValid = true;
     }
@@ -151,20 +158,23 @@ else if (foodType == "Salad") {
   )
   while (!isSaladValid) {
     if (saladSubtype == 1) {
+      foodOrder = "Caesar Salad"
       alert(
-        `Good call! You have chosen Caesar Salad!`
+        `Good call! You have chosen ${foodOrder}!`
       )
       isSaladValid = true;
     }
     else if (saladSubtype == 2) {
+      foodOrder = "Greek Salad"
       alert(
-        `Awesome choice! You have chosen Greek Salad!`
+        `Awesome choice! You have chosen ${foodOrder}!`
       )
       isSaladValid = true;
     }
     else if (saladSubtype == 3) {
+      foodOrder = "Caprese Salad"
       alert(
-        `You're in for a treat! You have chosen Caprese Salad!`
+        `You're in for a treat! You have chosen ${foodOrder}!`
       )
       isSaladValid = true;
     }
@@ -182,28 +192,70 @@ else if (foodType == "Salad") {
 
 // Step 4 - Age
 // Your code goes here
-const userAge = prompt(
+let userAge = prompt(
   `Will this order be for a child or adult? Please enter your age:`
 )
+userAge = Number(userAge);
+let confirmation = 0;
 
 if (userAge >= 13 && foodType == "Pizza") {
-  alert(
-    `One adult portion of ${pizzaSubtype} coming right up!
+  confirmation = prompt(
+    `One adult portion of ${foodOrder} coming right up!
     Enter a number to confirm:
       1 - Yes, please!
       2 - No, thank you.`
   )
 }
 else if (userAge < 13 && foodType == "Pizza") {
-  alert(
-    `One child portion of ${pizzaSubtype} coming right up!
+  confirmation = prompt(
+    `One child portion of ${foodOrder} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+else if (userAge >= 13 && foodType == "Pasta") {
+  confirmation = prompt(
+    `One adult portion of ${foodOrder} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+else if (userAge < 13 && foodType == "Pasta") {
+  confirmation = prompt(
+    `One child portion of ${foodOrder} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+else if (userAge >= 13 && foodType == "Salad") {
+  confirmation = prompt(
+    `One adult portion of ${foodOrder} coming right up!
+    Enter a number to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`
+  )
+}
+else if (userAge < 13 && foodType == "Salad") {
+  confirmation = prompt(
+    `One child portion of ${foodOrder} coming right up!
     Enter a number to confirm:
       1 - Yes, please!
       2 - No, thank you.`
   )
 }
 
-
-
 // Step 5 - Order confirmation
 // Your code goes here
+
+if (confirmation == 1) {
+  alert(
+    `Thank you! Your order is confirmed and your food is on the way.`
+  )
+}
+else if (confirmation == 2) {
+  alert(
+    `You have declined the order. If you change your mind, please come back and order again!`)
+}
