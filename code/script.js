@@ -46,6 +46,7 @@ if (foodType === "Pizza") {
       2 - Cheese
       3 - Margherita`)
   while (!isPizzaValid) {
+    // Loop to continuously prompt user until a valid selection is made
     if (pizzaSubtype == 1) {
       foodOrder = "Pepporoni Pizza"
       alert(`Great choice! You have selected ${foodOrder}!`)
@@ -126,45 +127,41 @@ if (foodType === "Pizza") {
 
 // Step 4 - Age
 let userAge = prompt(`Will this order be for a child or adult? Please enter your age:`)
-userAge = Number(userAge);
+userAge = Number(userAge)
 
-let confirmation = 0;
+let confirmation = 0
+let isValidAge = false
 
-if (userAge >= 13 && foodType === "Pizza") {
-  confirmation = prompt(`One adult portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
+while (!isValidAge) {
+  if (isNaN(userAge)) {
+    userAge = prompt(`Please enter an age as a number:`)
+  }
+  else if (userAge >= 13) {
+    confirmation = prompt(`One adult portion of ${foodOrder} costs $14.95. Enter a number to confirm:
       1 - Yes, please!
       2 - No, thank you.`)
-} else if (userAge < 13 && foodType === "Pizza") {
-  confirmation = prompt(`One child portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
+    isValidAge = true
+  } else if (userAge < 13) {
+    confirmation = prompt(`One child portion of ${foodOrder} costs $8.95. Enter a number to confirm:
       1 - Yes, please!
       2 - No, thank you.`)
-} else if (userAge >= 13 && foodType === "Pasta") {
-  confirmation = prompt(`One adult portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
-      1 - Yes, please!
-      2 - No, thank you.`)
-} else if (userAge < 13 && foodType === "Pasta") {
-  confirmation = prompt(`One child portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
-      1 - Yes, please!
-      2 - No, thank you.`)
-} else if (userAge >= 13 && foodType === "Salad") {
-  confirmation = prompt(`One adult portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
-      1 - Yes, please!
-      2 - No, thank you.`)
-} else if (userAge < 13 && foodType === "Salad") {
-  confirmation = prompt(`One child portion of ${foodOrder} coming right up!
-    Enter a number to confirm:
-      1 - Yes, please!
-      2 - No, thank you.`)
+    isValidAge = true
+  }
 }
 
 // Step 5 - Order confirmation
-if (confirmation === 1) {
-  alert(`Thank you! Your order is confirmed and your food is on the way.`)
-} else if (confirmation === 2) {
-  alert(`You have declined the order. If you change your mind, please come back and order again!`)
+let isConfirmationValid = false;
+
+while (isConfirmationValid == false) {
+  if (confirmation == 1) {
+    alert(`Thank you! Your order is confirmed and your food is on the way.`)
+    isConfirmationValid = true
+  } else if (confirmation == 2) {
+    alert(`You have declined the order. If you change your mind, please come back and order again!`)
+    isConfirmationValid = true
+  } else {
+    confirmation = prompt(`${confirmation} is an invalid option. Please enter 1 or 2 to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`)
+  }
 }

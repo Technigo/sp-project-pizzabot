@@ -1,24 +1,16 @@
 // Step 1 - Welcome and introduction
-alert(
-  `Welcome to our Javascript Pizzeria! Ready to Start? - Click 'OK' to begin.`
-)
+alert(`Welcome to Joyce's Pizzeria! Ready to order? - Click 'OK' to begin.`)
 
-let userName = prompt(
-  `What is your name?`
-)
+let userName = prompt(`What is your name?`)
 
-alert(
-  `Hi, ${userName}! We're so happy you've joined us today!`
-)
+alert(`Hi, ${userName}! We're so happy you've joined us today!`)
 
 // Step 2 - Food choice
-let userSelection = prompt(
-  `What would you like to order?
-    Please select a number: 
-      1 - Pizza
-      2 - Pasta
-      3 - Salad`
-)
+let userSelection = prompt(`What would you like to order? 
+  Please select a number: 
+    1 - Pizza
+    2 - Pasta
+    3 - Salad`)
 
 let isValid = false
 let foodType = ''
@@ -26,28 +18,31 @@ let foodType = ''
 while (!isValid) {
   switch (userSelection) {
     case '1':
+      // Case for Pizza
       foodType = "Pizza"
       alert(`You have selected ${foodType}.`)
       isValid = true
       break
     case '2':
+      // Case for Pasta
       foodType = "Pasta"
       alert(`You have selected ${foodType}.`)
       isValid = true
       break
     case '3':
+      // Case for Salad
       foodType = "Salad"
       alert(`You have selected ${foodType}.`)
       isValid = true
       break
     default:
+      // Default case for invalid selection
       userSelection = prompt(
         `${userSelection} is not a valid Option. Please enter a number between 1 and 3 to select one of the following options:
           1 - Pizza
           2 - Pasta
           3 - Salad`
       )
-
   }
 }
 
@@ -56,13 +51,11 @@ let foodOrder = ""
 
 if (foodType === "Pizza") {
   let isPizzaValid = false;
-  let pizzaSubtype = prompt(
-    `What toppings would you like on your pizza?
-      Please select a number:
-        1 - Pepporoni
-        2 - Cheese
-        3 - Margherita`
-  )
+  let pizzaSubtype = prompt(`What toppings would you like on your pizza?
+    Please select a number:
+      1 - Pepporoni
+      2 - Cheese
+      3 - Margherita`)
   while (!isPizzaValid) {
     switch (pizzaSubtype) {
       case '1':
@@ -96,13 +89,11 @@ if (foodType === "Pizza") {
   }
 } else if (foodType === "Pasta") {
   let isPastaValid = false;
-  let pastaSubtype = prompt(
-    `What kind of pasta would you like?
-      Please select a number:
-        1 - Spaghetti Bolognese
-        2 - Fettucine Alfredo
-        3 - Lasagna`
-  )
+  let pastaSubtype = prompt(`What kind of pasta would you like?
+    Please select a number:
+      1 - Spaghetti Bolognese
+      2 - Fettucine Alfredo
+      3 - Lasagna`)
   while (!isPastaValid) {
     switch (pastaSubtype) {
       case '1':
@@ -136,13 +127,11 @@ if (foodType === "Pizza") {
   }
 } else if (foodType === "Salad") {
   let isSaladValid = false
-  let saladSubtype = prompt(
-    `What kind of salad would you like?
-      Please select a number:
-        1 - Caesar Salad
-        2 - Greek Salad
-        3 - Caprese Salad`
-  )
+  let saladSubtype = prompt(`What kind of salad would you like?
+    Please select a number:
+      1 - Caesar Salad
+      2 - Greek Salad
+      3 - Caprese Salad`)
   while (!isSaladValid) {
     switch (saladSubtype) {
       case '1':
@@ -169,9 +158,29 @@ if (foodType === "Pizza") {
           `${saladSubtype} is not a valid selection. Please choose a number from the following salad options:
             1 - Caesar Salad
             2 - Greek Salad
-            3 - Caprese Salad`
-        )
+            3 - Caprese Salad`)
         break
     }
   }
 }
+
+// Step 4 - Age
+let userAge = prompt(`Will this order be for a child or adult? Please enter your age:`)
+userAge = Number(userAge);
+
+let confirmation = 0;
+let portionSize = userAge > 12 ? "adult" : "child"
+
+switch (foodType) {
+  case "Pizza":
+  case "Pasta":
+  case "Salad":
+    confirmation = prompt(`One ${portionSize} portion of ${foodOrder}coming right up!
+      Enter a number to confirm:
+        1 - Yes, please!
+        2 - No, thank you.`)
+    break
+  default:
+    alert(`Error. Please restart the ordering process.`)
+}
+
