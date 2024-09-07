@@ -199,7 +199,6 @@ while (!isValidAge) {
   }
 }
 
-
 // Step 5 - Order confirmation
 let isConfirmationValid = false
 
