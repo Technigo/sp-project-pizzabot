@@ -158,10 +158,10 @@ let isConfirmationValid = false
 
 while (isConfirmationValid == false) {
   if (confirmation == 1) {
-    alert(`Thank you! Your order is confirmed and your food is on the way.`)
+    alert(`Thank you, ${userName}! Your order is confirmed and your food is on the way.`)
     isConfirmationValid = true
   } else if (confirmation == 2) {
-    alert(`You have declined the order. If you change your mind, please come back and order again!`)
+    alert(`You have declined the order. If you change your mind, please come back and order again! Bye for now, ${userName}!`)
     isConfirmationValid = true
   } else {
     confirmation = prompt(`${confirmation} is an invalid option. Please enter 1 or 2 to confirm:

@@ -207,12 +207,12 @@ while (!isConfirmationValid) {
   switch (confirmation) {
     case '1':
       // Case for order confirmed
-      alert(`Thank you! Your order is confirmed and your food is on the way.`)
+      alert(`Thank you, ${userName}! Your order is confirmed and your food is on the way.`)
       isConfirmationValid = true
       break
     case '2':
       // Case for order cancelled
-      alert(`You have declined the order. If you change your mind, please come back and order again!`)
+      alert(`You have declined the order. If you change your mind, please come back and order again. Bye for now, ${userName}!`)
       isConfirmationValid = true
       break
     default:
