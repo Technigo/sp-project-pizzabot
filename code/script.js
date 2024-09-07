@@ -12,7 +12,7 @@ let userSelection = prompt(`What would you like to order?
     2 - Pasta
     3 - Salad`)
 
-let isValid = false;
+let isValid = false
 
 while (!isValid) {
   if (userSelection == 1) {
@@ -50,15 +50,15 @@ if (foodType === "Pizza") {
     if (pizzaSubtype == 1) {
       foodOrder = "Pepporoni Pizza"
       alert(`Great choice! You have selected ${foodOrder}!`)
-      isPizzaValid = true;
+      isPizzaValid = true
     } else if (pizzaSubtype == 2) {
       foodOrder = "Cheese Pizza"
       alert(`Excellent choice! You have chosen ${foodOrder}!`)
-      isPizzaValid = true;
+      isPizzaValid = true
     } else if (pizzaSubtype == 3) {
       foodOrder = "Margherita Pizza"
       alert(`Yum! You have chosen ${foodOrder}!`)
-      isPizzaValid = true;
+      isPizzaValid = true
     } else {
       pizzaSubtype = prompt(`${pizzaSubtype} is not a valid selection. 
         Please choose a number from the following pizza options:
@@ -68,7 +68,7 @@ if (foodType === "Pizza") {
     }
   }
 } else if (foodType === "Pasta") {
-  let isPastaValid = false;
+  let isPastaValid = false
   let pastaSubtype = prompt(`What kind of pasta would you like?
     Please select a number:
       1 - Spaghetti Bolognese
@@ -78,15 +78,15 @@ if (foodType === "Pizza") {
     if (pastaSubtype == 1) {
       foodOrder = "Spaghetti Bolognese"
       alert(`That's one of our favorites! You have chosen ${foodOrder}!`)
-      isPastaValid = true;
+      isPastaValid = true
     } else if (pastaSubtype == 2) {
       foodOrder = "Fettucine Alfredo"
       alert(`Wonderful choice! You have chosen ${foodOrder}!`)
-      isPastaValid = true;
+      isPastaValid = true
     } else if (pastaSubtype == 3) {
       foodOrder = "Lasagna"
       alert(`A brilliant selection! You have chosen ${foodOrder}!`)
-      isPastaValid = true;
+      isPastaValid = true
     } else {
       pastaSubtype = prompt(`${pastaSubtype} is not a valid selection.
         Please choose a number from the following pasta options:
@@ -96,7 +96,7 @@ if (foodType === "Pizza") {
     }
   }
 } else if (foodType === "Salad") {
-  let isSaladValid = false;
+  let isSaladValid = false
   let saladSubtype = prompt(`What kind of salad would you like?
     Please select a number:
       1 - Caesar Salad
@@ -106,15 +106,15 @@ if (foodType === "Pizza") {
     if (saladSubtype == 1) {
       foodOrder = "Caesar Salad"
       alert(`Good call! You have chosen ${foodOrder}!`)
-      isSaladValid = true;
+      isSaladValid = true
     } else if (saladSubtype == 2) {
       foodOrder = "Greek Salad"
       alert(`Awesome choice! You have chosen ${foodOrder}!`)
-      isSaladValid = true;
+      isSaladValid = true
     } else if (saladSubtype == 3) {
       foodOrder = "Caprese Salad"
       alert(`You're in for a treat! You have chosen ${foodOrder}!`)
-      isSaladValid = true;
+      isSaladValid = true
     } else {
       saladSubtype = prompt(`${saladSubtype} is not a valid selection.
         Please choose a number from the following salad options:
@@ -123,6 +123,8 @@ if (foodType === "Pizza") {
           3 - Caprese Salad`)
     }
   }
+} else {
+  alert(`Error. Please restart.`)
 }
 
 // Step 4 - Age
@@ -146,11 +148,13 @@ while (!isValidAge) {
       1 - Yes, please!
       2 - No, thank you.`)
     isValidAge = true
+  } else {
+    alert(`Error. Please restart.`)
   }
 }
 
 // Step 5 - Order confirmation
-let isConfirmationValid = false;
+let isConfirmationValid = false
 
 while (isConfirmationValid == false) {
   if (confirmation == 1) {

@@ -50,7 +50,7 @@ while (!isValid) {
 let foodOrder = ""
 
 if (foodType === "Pizza") {
-  let isPizzaValid = false;
+  let isPizzaValid = false
   let pizzaSubtype = prompt(`What toppings would you like on your pizza?
     Please select a number:
       1 - Pepporoni
@@ -88,7 +88,7 @@ if (foodType === "Pizza") {
     }
   }
 } else if (foodType === "Pasta") {
-  let isPastaValid = false;
+  let isPastaValid = false
   let pastaSubtype = prompt(`What kind of pasta would you like?
     Please select a number:
       1 - Spaghetti Bolognese
@@ -166,21 +166,59 @@ if (foodType === "Pizza") {
 
 // Step 4 - Age
 let userAge = prompt(`Will this order be for a child or adult? Please enter your age:`)
-userAge = Number(userAge);
+userAge = Number(userAge)
 
-let confirmation = 0;
-let portionSize = userAge > 12 ? "adult" : "child"
+let confirmation = 0
+let isValidAge = false
 
-switch (foodType) {
-  case "Pizza":
-  case "Pasta":
-  case "Salad":
-    confirmation = prompt(`One ${portionSize} portion of ${foodOrder}coming right up!
-      Enter a number to confirm:
+while (!isValidAge) {
+  if (isNaN(userAge)) {
+    userAge = prompt(`Please enter an age as a number.`)
+  }
+  else {
+    let portionSize = userAge > 12 ? "adult" : "child"
+
+    switch (portionSize) {
+      case "adult":
+        // Case for adult portion
+        confirmation = prompt(`One adult portion of ${foodOrder} costs $14.95. Enter a number to confirm:
         1 - Yes, please!
         2 - No, thank you.`)
-    break
-  default:
-    alert(`Error. Please restart the ordering process.`)
+        isValidAge = true
+        break
+      case "child":
+        // Case for child portion
+        confirmation = prompt(`One child portion of ${foodOrder} costs $8.95. Enter a number to confirm:
+        1 - Yes, please!
+        2 - No, thank you.`)
+        isValidAge = true
+        break
+      default:
+        alert(`Error. Please restart.`)
+    }
+  }
 }
 
+
+// Step 5 - Order confirmation
+let isConfirmationValid = false
+
+while (!isConfirmationValid) {
+  switch (confirmation) {
+    case '1':
+      // Case for order confirmed
+      alert(`Thank you! Your order is confirmed and your food is on the way.`)
+      isConfirmationValid = true
+      break
+    case '2':
+      // Case for order cancelled
+      alert(`You have declined the order. If you change your mind, please come back and order again!`)
+      isConfirmationValid = true
+      break
+    default:
+      // Case for anything else
+      confirmation = prompt(`${confirmation} is an invalid option. Please enter 1 or 2 to confirm:
+      1 - Yes, please!
+      2 - No, thank you.`)
+  }
+}
