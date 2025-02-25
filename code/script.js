@@ -3,11 +3,28 @@
 // Step 1 - Welcome and introduction
 // Your code goes here
 alert(
-  `Welcome to our Javascript Pizzeria. Ready to Start? - Click 'OK' to begin.`
+  `Welcome to the Chaos Pizzeria. Ready to Order? - Click 'OK' to begin.`
+)
+let name = prompt('Please enter your name here', '')
+
+alert(
+  `Hi ${name}. Are you hungry?`
 )
 
 // Step 2 - Food choice
 // Your code goes here
+let foodChoice = prompt('What would you like to order? /n 1 - Pizza /n 2 - Pasta /n 3 - Desert', '')
+
+if (foodChoice === 1) {
+  alert('You chose Pizza!')
+} else if (foodChoice === 2) {
+  alert('You chose Pasta!')
+} else if (foodChoice === 3) {
+  alert('You chose Desert!')
+} else {
+  alert('Invalid input, please pick a number between 1 and 3.')
+}
+
 
 // Step 3 - Subtype choice
 // Your code goes here
