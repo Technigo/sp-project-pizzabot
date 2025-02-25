@@ -1,7 +1,7 @@
 // Start here
 
 // Step 1 - Welcome and introduction
-// Your code goes here
+// Here is just and alert with the welcome message and then I ask for the name using a prompt.
 alert(
   `Welcome to the Chaos Pizzeria.\nReady to Order? - Click 'OK' to begin.`
 )
@@ -12,7 +12,7 @@ alert(
 )
 
 // Step 2 - Food choice
-// Your code goes here
+// I need to get the over all food choice. 
 let foodChoice = prompt('What would you like to order? (enter a number) \n1 - Pizza\n2 - Pasta\n3 - Desert', '')
 
 const foodAvailable = ['Pizza', 'Pasta', 'Desert']
@@ -26,7 +26,7 @@ alert(
 const pizzaChoice = ['Magherita', 'Parma', 'Vegeteriano', 'Bufalata']
 const pastaChoice = ['Ravioli', 'Spaghetti alla Carbonara', 'Linguine', 'Chef choice']
 const desertChoice = ['Tiramisu', 'Gelato', 'Panna cotta', 'Chocolate fondant']
-
+// to be able to access the final choice in the end I need to declare the variable outside the if statement 
 let finalChoice = ''
 // Your code goes here
 if (foodChoice === '1') {
