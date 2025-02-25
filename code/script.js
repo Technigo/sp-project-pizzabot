@@ -13,13 +13,13 @@ alert(
 
 // Step 2 - Food choice
 // Your code goes here
-let foodChoice = prompt('What would you like to order? /n 1 - Pizza /n 2 - Pasta /n 3 - Desert', '')
+let foodChoice = prompt('What would you like to order?\n1 - Pizza\n2 - Pasta\n3 - Desert', '')
 
-if (foodChoice === 1) {
+if (foodChoice == 1) {
   alert('You chose Pizza!')
-} else if (foodChoice === 2) {
+} else if (foodChoice == 2) {
   alert('You chose Pasta!')
-} else if (foodChoice === 3) {
+} else if (foodChoice == 3) {
   alert('You chose Desert!')
 } else {
   alert('Invalid input, please pick a number between 1 and 3.')
