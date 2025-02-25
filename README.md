@@ -1,10 +1,15 @@
-# Pizzabot
+# Pizzabot 
 
-Replace this readme with your own information about the project. You can include things like:
+Project: Build a simple Pizza bot using JavaScript. 
+## Tech stack
+- JavaScript 
+- HTML (precoded)
+- CSS (precoded)
 
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
+
+## Project
+
+The project task was build a simple Pizzabot to learn some of the basics of JavaScript mainly focusing on alerts and prompts. By adding different steps in the ordering process I needed to get input from the user (e.g. name) and also display new choices based on previous choices (e.g. different pizza types when pizza is chosen). 
 
 ## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Project is deployed here: [Chaos Pizza](https://chaospizza.netlify.app)
